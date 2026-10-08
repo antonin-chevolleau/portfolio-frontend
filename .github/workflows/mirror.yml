@@ -1,0 +1,19 @@
+name: Mirror vers le repo Epitech
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout complet
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push vers le repo Epitech
+        run: |
+          git remote add epitech https://x-access-token:${{ secrets.EPITECH_PAT }}@github.com/EpitechMscProPromo2029/T-ENT-500-PAR-5-1-portfolio-3.git
+          git push epitech main --force
