@@ -28,6 +28,8 @@
 
 @layer base {
   html {
+    /* Barres de défilement et éléments natifs du navigateur en version sombre */
+    color-scheme: dark;
     scroll-behavior: smooth;
     /* Évite que la nav sticky masque le haut des sections ciblées par une ancre */
     scroll-padding-top: --spacing(20);
@@ -36,6 +38,17 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+
+  /* Évite les mots seuls en fin de ligne */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   /* Un seul style de focus pour tous les éléments interactifs */

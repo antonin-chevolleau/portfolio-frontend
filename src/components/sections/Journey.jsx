@@ -52,12 +52,19 @@ function Journey() {
         </div>
 
         {/* Liste ordonnée : le parcours est une séquence, la ligne verticale la matérialise */}
-        <ol className="border-border mt-12 ml-1 border-l">
+        <ol className="mt-12 ml-1">
           {steps.map((step, index) => (
             <li
               key={`${step.title}-${index}`}
               className="relative grid grid-cols-1 gap-2 pb-12 pl-6 last:pb-0 md:grid-cols-12 md:gap-8 md:pl-8"
             >
+              {/* Segment de ligne jusqu'au point suivant : rien après le dernier */}
+              {index < steps.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  className="bg-border absolute top-2.5 -bottom-2.5 left-0 w-px"
+                />
+              )}
               <span
                 aria-hidden="true"
                 className={cn(

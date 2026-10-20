@@ -1,3 +1,4 @@
+import Button from "@/components/ui/Button";
 import ExternalLink from "@/components/ui/ExternalLink";
 
 // TODO : remplacer par mes vraies coordonnées
@@ -34,19 +35,10 @@ function Contact() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href={`mailto:${email}`}
-              className="bg-accent text-background hover:bg-accent/85 rounded-lg px-5 py-3 text-sm font-medium transition-colors duration-200 ease-out"
-            >
-              M’écrire
-            </a>
-            <a
-              href={cvHref}
-              download
-              className="border-border text-foreground hover:border-muted hover:bg-surface rounded-lg border px-5 py-3 text-sm font-medium transition-colors duration-200 ease-out"
-            >
+            <Button href={`mailto:${email}`}>M’écrire</Button>
+            <Button href={cvHref} download variant="secondary">
               Télécharger mon CV
-            </a>
+            </Button>
           </div>
         </div>
 

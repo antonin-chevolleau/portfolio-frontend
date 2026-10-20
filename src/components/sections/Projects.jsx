@@ -13,8 +13,8 @@ const projects = [
     context: "Projet Epitech",
     summary: "TODO Une phrase qui dit ce que fait le projet.",
     details: [
-      { label: "Problème", value: "TODO Ce qu'il fallait résoudre." },
-      { label: "Approche", value: "TODO Comment je m'y suis pris." },
+      { label: "Problème", value: "TODO Ce qu’il fallait résoudre." },
+      { label: "Approche", value: "TODO Comment je m’y suis pris." },
       {
         label: "Résultat",
         value: "TODO Ce que ça a donné, chiffré si possible.",
@@ -105,7 +105,7 @@ function Projects() {
             </div>
 
             {/* Même langage visuel que l'encadré de la hero */}
-            <div className="border-border bg-surface/60 overflow-hidden rounded-xl border lg:col-span-7">
+            <div className="border-border bg-surface/60 overflow-hidden rounded-xl border lg:col-span-7 lg:self-start">
               {featuredProject.image && (
                 <Image
                   src={featuredProject.image.src}

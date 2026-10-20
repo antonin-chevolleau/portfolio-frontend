@@ -1,8 +1,10 @@
+import Button from "@/components/ui/Button";
+
 const missionDetails = [
   { label: "Objectif", value: "Alternance en cybersécurité" },
   { label: "Cap", value: "Pentest" },
   { label: "Formation", value: "Epitech, Pre-MSc vers MSc Cybersécurité" },
-  { label: "Rythme", value: "4 semaines en entreprise / 2 semaines à l'école" },
+  { label: "Rythme", value: "4 semaines en entreprise / 2 semaines à l’école" },
   { label: "Dès", value: "Janvier 2027" },
   { label: "Lieu", value: "Île-de-France" },
 ];
@@ -46,7 +48,7 @@ function Hero() {
             Antonin Chevolleau
           </h1>
 
-          <p className="text-foreground/90 mt-6 max-w-xl text-2xl font-normal tracking-tight sm:text-3xl">
+          <p className="text-foreground/90 mt-6 max-w-xl text-2xl font-normal tracking-tight text-balance sm:text-3xl">
             Étudiant à Epitech, je me forme à la cybersécurité.
           </p>
 
@@ -56,18 +58,10 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href="#projets"
-              className="bg-accent text-background hover:bg-accent/85 rounded-lg px-5 py-3 text-sm font-medium transition-colors duration-200 ease-out"
-            >
-              Voir mes projets
-            </a>
-            <a
-              href="#contact"
-              className="border-border text-foreground hover:border-muted hover:bg-surface rounded-lg border px-5 py-3 text-sm font-medium transition-colors duration-200 ease-out"
-            >
+            <Button href="#projets">Voir mes projets</Button>
+            <Button href="#contact" variant="secondary">
               Me contacter
-            </a>
+            </Button>
           </div>
         </div>
 

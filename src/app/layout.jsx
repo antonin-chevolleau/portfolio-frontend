@@ -11,10 +11,21 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
+const title = "Antonin Chevolleau | Portfolio";
+const description =
+  "Étudiant en Pre-MSc à Epitech, je cherche une alternance en cybersécurité (pentest) à partir de janvier 2027 en Île-de-France. Projets, compétences et parcours.";
+
 export const metadata = {
-  title: "Antonin Chevolleau | Portfolio",
-  description:
-    "Étudiant en Pre-MSc à Epitech, je cherche une alternance en cybersécurité (pentest) à partir de janvier 2027 en Île-de-France. Projets, compétences et parcours.",
+  title,
+  description,
+  // Aperçu affiché quand le lien est partagé (LinkedIn, messageries)
+  openGraph: { title, description, locale: "fr_FR", type: "website" },
+};
+
+export const viewport = {
+  // Couleur de la barre du navigateur mobile : même valeur que --color-background
+  // (l'API metadata n'accepte pas de variable CSS)
+  themeColor: "#0a0a0f",
 };
 
 function RootLayout({ children }) {
