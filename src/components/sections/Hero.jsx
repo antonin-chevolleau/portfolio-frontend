@@ -52,8 +52,7 @@ function Hero() {
 
           <p className="text-muted mt-6 max-w-xl text-base leading-relaxed sm:text-lg">
             En Pre-MSc, je prépare le MSc Cybersécurité et je cherche une
-            alternance pour apprendre sur le terrain, côté pentest comme côté
-            SOC.
+            alternance pour apprendre sur le terrain, côté pentest.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
