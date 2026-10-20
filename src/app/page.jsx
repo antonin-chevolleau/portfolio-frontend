@@ -1,3 +1,4 @@
+import Contact from "@/components/sections/Contact";
 import Hero from "@/components/sections/Hero";
 import Journey from "@/components/sections/Journey";
 import Projects from "@/components/sections/Projects";
@@ -10,6 +11,7 @@ function HomePage() {
       <Projects />
       <Skills />
       <Journey />
+      <Contact />
     </>
   );
 }
