@@ -31,7 +31,8 @@ export const viewport = {
 function RootLayout({ children }) {
   return (
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="font-sans antialiased">
+      {/* id="haut" : cible du lien « Retour en haut » du footer */}
+      <body id="haut" className="font-sans antialiased">
         <Navbar />
         <main id="contenu">{children}</main>
         <Footer />

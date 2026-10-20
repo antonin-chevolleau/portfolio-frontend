@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 
 const variants = {
-  primary: "bg-accent text-background hover:bg-accent/85",
+  primary: "bg-accent text-background hover:bg-accent/85 active:bg-accent/75",
   secondary:
-    "border-border text-foreground hover:border-muted hover:bg-surface border",
+    "border-border text-foreground hover:border-muted hover:bg-surface active:bg-surface-hover border",
 };
 
 // Lien stylé en bouton : toutes les actions du site sont des liens
@@ -12,7 +12,7 @@ function Button({ variant = "primary", className, ...props }) {
   return (
     <a
       className={cn(
-        "rounded-lg px-5 py-3 text-sm font-medium transition-colors duration-200 ease-out",
+        "inline-flex items-center justify-center rounded-lg px-5 py-3 text-sm font-medium transition-colors duration-200 ease-out",
         variants[variant],
         className,
       )}

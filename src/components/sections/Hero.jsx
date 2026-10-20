@@ -1,30 +1,16 @@
 import Button from "@/components/ui/Button";
+import { profileLinks } from "@/data/contact";
 
 const missionDetails = [
-  { label: "Objectif", value: "Alternance en cybersécurité" },
-  { label: "Cap", value: "Pentest" },
+  { label: "Domaine", value: "Cybersécurité, orientée pentest" },
   { label: "Formation", value: "Epitech, Pre-MSc vers MSc Cybersécurité" },
-  { label: "Rythme", value: "4 semaines en entreprise / 2 semaines à l’école" },
+  // \u00a0 : espace insécable, le chiffre ne se sépare pas de son unité en fin de ligne
+  {
+    label: "Rythme",
+    value: "4\u00a0semaines en entreprise / 2\u00a0semaines à l’école",
+  },
   { label: "Dès", value: "Janvier 2027" },
   { label: "Lieu", value: "Île-de-France" },
-];
-
-const proofLinks = [
-  {
-    label: "GitHub",
-    handle: "Mon GitHub",
-    href: "https://github.com/antonin-chevolleau/",
-  },
-  {
-    label: "HackTheBox",
-    handle: "Mon Profil HTB",
-    href: "https://profile.hackthebox.com/profile/01a0a48f-de3f-718f-b854-f7fae1247984?utm_medium=copy_url",
-  },
-  {
-    label: "LinkedIn",
-    handle: "Mon LinkedIn",
-    href: "https://www.linkedin.com/in/antonin-chevolleau",
-  },
 ];
 
 function Hero() {
@@ -48,19 +34,14 @@ function Hero() {
             Antonin Chevolleau
           </h1>
 
-          <p className="text-foreground/90 mt-6 max-w-xl text-2xl font-normal tracking-tight text-balance sm:text-3xl">
+          <p className="text-foreground mt-6 max-w-xl text-2xl font-normal tracking-tight text-balance sm:text-3xl">
             Étudiant à Epitech, je me forme à la cybersécurité.
           </p>
 
-          <p className="text-muted mt-6 max-w-xl text-base leading-relaxed sm:text-lg">
-            En Pre-MSc, je prépare le MSc Cybersécurité et je cherche une
-            alternance pour apprendre sur le terrain, côté pentest.
-          </p>
-
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button href="#projets">Voir mes projets</Button>
-            <Button href="#contact" variant="secondary">
-              Me contacter
+            <Button href="#contact">Me contacter</Button>
+            <Button href="#projets" variant="secondary">
+              Voir mes projets
             </Button>
           </div>
         </div>
@@ -74,14 +55,14 @@ function Hero() {
               id="mission-title"
               className="text-foreground text-sm font-medium"
             >
-              Recherche d’alternance
+              Alternance
             </h2>
             <p className="text-muted flex items-center gap-2 font-mono text-xs">
               <span
                 aria-hidden="true"
                 className="bg-accent ring-accent/15 size-2 rounded-full ring-4"
               />
-              Disponible
+              En recherche
             </p>
           </div>
 
@@ -98,7 +79,7 @@ function Hero() {
           </dl>
 
           <ul className="border-border border-t px-5 py-2">
-            {proofLinks.map((link) => (
+            {profileLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}

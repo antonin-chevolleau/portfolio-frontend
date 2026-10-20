@@ -6,6 +6,7 @@ import Tag from "@/components/ui/Tag";
 // TODO : remplacer par mes vrais projets (ou déplacer dans un fichier de données)
 // Un seul projet doit avoir `featured: true` : c'est le projet phare.
 // `image` est optionnel : { src: "/projects/xxx.png", alt, width, height }
+// `id` est optionnel : ancre du projet, pour y pointer depuis Compétences (ex. id: "projet-xxx" -> href "#projet-xxx")
 const projects = [
   {
     featured: true,
@@ -67,8 +68,9 @@ function Projects() {
 
         {featuredProject && (
           <article
+            id={featuredProject.id}
             aria-labelledby="projet-phare-title"
-            className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16"
+            className="border-border bg-surface/60 mt-12 grid grid-cols-1 gap-10 rounded-xl border p-6 sm:p-8 lg:grid-cols-12 lg:gap-12 lg:p-10"
           >
             <div className="lg:col-span-5">
               <p className="text-muted font-mono text-sm">
@@ -98,24 +100,30 @@ function Projects() {
               <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
                 {featuredProject.links.map((link) => (
                   <li key={link.label}>
-                    <ExternalLink href={link.href}>{link.label}</ExternalLink>
+                    <ExternalLink href={link.href}>
+                      {link.label}
+                      <span className="sr-only">
+                        {" "}
+                        : {featuredProject.title}
+                      </span>
+                    </ExternalLink>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Même langage visuel que l'encadré de la hero */}
-            <div className="border-border bg-surface/60 overflow-hidden rounded-xl border lg:col-span-7 lg:self-start">
+            {/* Le projet phare est le seul panneau de la section : pas de carte imbriquée */}
+            <div className="lg:col-span-7 lg:self-start">
               {featuredProject.image && (
                 <Image
                   src={featuredProject.image.src}
                   alt={featuredProject.image.alt}
                   width={featuredProject.image.width}
                   height={featuredProject.image.height}
-                  className="border-border w-full border-b"
+                  className="border-border mb-6 w-full rounded-lg border"
                 />
               )}
-              <dl className="divide-border divide-y px-5">
+              <dl className="divide-border border-border divide-y border-y">
                 {featuredProject.details.map((item) => (
                   <div
                     key={item.label}
@@ -133,9 +141,10 @@ function Projects() {
         )}
 
         <ul className="divide-border border-border mt-16 divide-y border-y">
-          {otherProjects.map((project) => (
+          {otherProjects.map((project, index) => (
             <li
-              key={project.title}
+              key={`${project.title}-${index}`}
+              id={project.id}
               className="grid grid-cols-1 gap-4 py-8 md:grid-cols-12 md:gap-8"
             >
               <div className="md:col-span-4">
@@ -147,14 +156,14 @@ function Projects() {
                 </h3>
               </div>
 
-              <p className="text-muted text-base leading-relaxed md:col-span-5">
-                {project.summary}
-              </p>
-
-              <div className="flex flex-col gap-4 md:col-span-3 md:items-end">
+              {/* Tags et liens sous le résumé : une colonne étroite ne tient pas 4 à 6 tags */}
+              <div className="md:col-span-8">
+                <p className="text-muted max-w-2xl text-base leading-relaxed">
+                  {project.summary}
+                </p>
                 <ul
                   aria-label="Technologies"
-                  className="flex flex-wrap gap-2 md:justify-end"
+                  className="mt-4 flex flex-wrap gap-2"
                 >
                   {project.tags.map((tag, index) => (
                     <li key={`${tag}-${index}`}>
@@ -162,10 +171,13 @@ function Projects() {
                     </li>
                   ))}
                 </ul>
-                <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
                   {project.links.map((link) => (
                     <li key={link.label}>
-                      <ExternalLink href={link.href}>{link.label}</ExternalLink>
+                      <ExternalLink href={link.href}>
+                        {link.label}
+                        <span className="sr-only"> : {project.title}</span>
+                      </ExternalLink>
                     </li>
                   ))}
                 </ul>

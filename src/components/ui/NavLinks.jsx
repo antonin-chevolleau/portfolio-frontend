@@ -58,10 +58,10 @@ function NavLinks({ links }) {
           <li key={link.href}>
             <a
               href={link.href}
-              aria-current={isActive ? "true" : undefined}
+              aria-current={isActive ? "location" : undefined}
               className={cn(
-                // py-1 / -my-1 : zone tactile plus haute sans changer la hauteur de la nav
-                "hover:text-foreground hover:decoration-accent -my-1 inline-block rounded-sm py-1 underline-offset-8 transition-colors duration-200 ease-out hover:underline",
+                // py-2 / -my-2 : zone tactile de 36 px sans changer la hauteur de la nav
+                "hover:text-foreground hover:decoration-accent -my-2 inline-block rounded-sm py-2 underline-offset-8 transition-colors duration-200 ease-out hover:underline",
                 isActive && "text-foreground decoration-accent underline",
               )}
             >

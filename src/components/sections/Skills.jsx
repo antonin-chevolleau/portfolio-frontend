@@ -3,7 +3,7 @@ import Tag from "@/components/ui/Tag";
 
 // TODO : remplacer par mes vraies compétences (ou déplacer dans un fichier de données)
 // `proofs` est optionnel : liens vers là où la compétence a été mise en pratique.
-// Un `href` qui commence par "#" pointe vers une section de la page (ex. "#projets").
+// Un `href` qui commence par "#" pointe vers la page : une section ("#projets") ou un projet précis ("#projet-xxx", voir son `id`).
 const skillGroups = [
   {
     domain: "Offensif",
@@ -52,7 +52,7 @@ function Skills() {
           {skillGroups.map((group) => (
             <li
               key={group.domain}
-              className="grid grid-cols-1 gap-4 py-8 md:grid-cols-12 md:gap-8"
+              className="grid grid-cols-1 gap-4 py-6 md:grid-cols-12 md:gap-8"
             >
               <h3 className="text-foreground text-lg font-semibold tracking-tight md:col-span-3">
                 {group.domain}

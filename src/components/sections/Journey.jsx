@@ -29,6 +29,7 @@ const steps = [
 const statusLabels = {
   next: "À venir",
   current: "En cours",
+  done: "Terminé",
 };
 
 function Journey() {
@@ -77,7 +78,9 @@ function Journey() {
               />
 
               <div className="md:col-span-3">
-                <p className="text-muted font-mono text-sm">{step.period}</p>
+                <p className="text-muted font-mono text-sm tabular-nums">
+                  {step.period}
+                </p>
                 {statusLabels[step.status] && (
                   <p
                     className={cn(

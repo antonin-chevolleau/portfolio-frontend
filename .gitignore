@@ -43,3 +43,11 @@ next-env.d.ts
 # claude files
 CLAUDE.md
 AGENTS.md
+/.claude/
+
+# impeccable (skill, agents, hooks, critiques et cache locaux)
+/.impeccable/
+/.github/agents/
+/.github/hooks/
+/.github/skills/
+PRODUCT.md
