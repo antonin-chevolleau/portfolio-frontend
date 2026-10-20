@@ -1,6 +1,8 @@
 import Link from "next/link";
 
-// Ancres vers les futures sections de la page d'accueil
+import NavLinks from "@/components/ui/NavLinks";
+
+// Ancres vers les sections de la page d'accueil
 const navLinks = [
   { href: "#projets", label: "Projets" },
   { href: "#competences", label: "Compétences" },
@@ -29,18 +31,7 @@ function Navbar() {
           Antonin Chevolleau
         </Link>
 
-        <ul className="text-muted flex items-center gap-5 text-sm sm:gap-7">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="hover:text-foreground hover:decoration-accent rounded-sm underline-offset-8 transition-colors duration-200 ease-out hover:underline"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <NavLinks links={navLinks} />
       </nav>
     </header>
   );
