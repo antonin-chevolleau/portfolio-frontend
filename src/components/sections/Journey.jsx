@@ -1,28 +1,26 @@
 import { cn } from "@/lib/utils";
 
-// TODO : remplacer par mon vrai parcours (ou déplacer dans un fichier de données)
 // Du plus récent au plus ancien. `status` : "next" (à venir), "current" (en cours) ou "done".
+// `description` est optionnelle.
 const steps = [
   {
     status: "next",
-    period: "Janvier 2027",
-    title: "MSc Cybersécurité, en alternance",
+    period: "2027 – 2029",
+    title: "Master of Science Cybersécurité",
     place: "Epitech",
-    description: "TODO Ce que je vise pendant cette alternance.",
   },
   {
     status: "current",
-    period: "TODO – aujourd’hui",
-    title: "Pre-MSc",
+    period: "2026 – 2027",
+    title: "Année préparatoire au Master of Science",
     place: "Epitech",
-    description: "TODO Ce que j’y apprends, en une ou deux phrases.",
   },
   {
     status: "done",
-    period: "TODO – TODO",
-    title: "TODO Diplôme ou expérience précédente",
-    place: "TODO Établissement",
-    description: "TODO Une phrase de contexte.",
+    period: "2025 – 2026",
+    title: "Formation Intégrateur web",
+    place: "OpenClassrooms",
+    description: "Titre RNCP de niveau 5 « Développeur informatique »",
   },
 ];
 
@@ -48,7 +46,7 @@ function Journey() {
             Parcours
           </h2>
           <p className="text-muted mt-4 text-base leading-relaxed sm:text-lg">
-            D’où je viens et où je vais.
+            Du développement web vers le pentest.
           </p>
         </div>
 
@@ -98,9 +96,11 @@ function Journey() {
                   {step.title}
                 </h3>
                 <p className="text-muted mt-1 text-sm">{step.place}</p>
-                <p className="text-muted mt-3 max-w-2xl text-base leading-relaxed">
-                  {step.description}
-                </p>
+                {step.description && (
+                  <p className="text-muted mt-3 max-w-2xl text-base leading-relaxed">
+                    {step.description}
+                  </p>
+                )}
               </div>
             </li>
           ))}

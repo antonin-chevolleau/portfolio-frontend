@@ -1,9 +1,11 @@
 import Button from "@/components/ui/Button";
+import ExternalLink from "@/components/ui/ExternalLink";
 import { cvHref, email, profileLinks } from "@/data/contact";
 
 // Sans e-mail renseigné, LinkedIn devient le canal principal :
 // le bouton « Me contacter » de la hero ne mène jamais à une impasse
 const linkedIn = profileLinks.find((link) => link.label === "LinkedIn");
+const proofLinks = profileLinks.filter((link) => link.label !== "LinkedIn");
 
 function Contact() {
   return (
@@ -21,8 +23,9 @@ function Contact() {
             Contact
           </h2>
           <p className="text-muted mt-4 text-base leading-relaxed sm:text-lg">
-            Pour parler d’une alternance à partir de janvier 2027, le plus
-            simple est {email ? "un e-mail" : "un message sur LinkedIn"}.
+            Pour parler d’une alternance en pentest à partir de janvier 2027, en
+            Île-de-France, le plus simple est{" "}
+            {email ? "un e-mail" : "un message sur LinkedIn"}.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -43,6 +46,18 @@ function Contact() {
                 Télécharger mon CV
               </Button>
             )}
+          </div>
+
+          {/* Dernier rappel des preuves avant de partir : les profils hors canal de contact principal */}
+          <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm">
+            <p className="text-muted">Mes preuves en ligne</p>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2">
+              {proofLinks.map((link) => (
+                <li key={link.label}>
+                  <ExternalLink href={link.href}>{link.label}</ExternalLink>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Adresse visible pour pouvoir la copier sans ouvrir de client mail */}

@@ -24,9 +24,10 @@ function Navbar() {
         aria-label="Navigation principale"
         className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-2 px-6 py-4"
       >
+        {/* Masqué sur mobile : nom + 4 liens passaient sur deux lignes, et le h1 affiche déjà le nom */}
         <Link
           href="/"
-          className="text-foreground rounded-sm text-sm font-semibold tracking-tight"
+          className="text-foreground rounded-sm text-sm font-semibold tracking-tight max-sm:hidden"
         >
           Antonin Chevolleau
         </Link>

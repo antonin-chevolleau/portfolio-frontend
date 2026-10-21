@@ -1,45 +1,81 @@
 import Image from "next/image";
 
+import Button from "@/components/ui/Button";
 import ExternalLink from "@/components/ui/ExternalLink";
 import Tag from "@/components/ui/Tag";
+import { profileLinks } from "@/data/contact";
 
-// TODO : remplacer par mes vrais projets (ou déplacer dans un fichier de données)
+const htbProfile = profileLinks.find((link) => link.label === "HackTheBox");
+
 // Un seul projet doit avoir `featured: true` : c'est le projet phare.
 // `image` est optionnel : { src: "/projects/xxx.png", alt, width, height }
 // `id` est optionnel : ancre du projet, pour y pointer depuis Compétences (ex. id: "projet-xxx" -> href "#projet-xxx")
 const projects = [
   {
     featured: true,
-    title: "TODO Projet phare",
-    context: "Projet Epitech",
-    summary: "TODO Une phrase qui dit ce que fait le projet.",
+    id: "projet-job-board",
+    title: "Tanière Job Board",
+    context: "Projet Epitech, full-stack, en équipe",
+    summary:
+      "Un job board qui liste des offres et permet d’y candidater. Un espace admin gère les entreprises, les utilisateurs, les annonces et les candidatures.",
     details: [
-      { label: "Problème", value: "TODO Ce qu’il fallait résoudre." },
-      { label: "Approche", value: "TODO Comment je m’y suis pris." },
+      {
+        label: "Problème",
+        value:
+          "Simplifier la candidature pour les personnes en recherche d’emploi, et mener le projet en équipe.",
+      },
+      {
+        label: "Approche",
+        value:
+          "Le détail d’une offre s’ouvre dans un menu dépliant, sans changer de page. On candidate directement sur le site, et un utilisateur connecté n’a pas à ressaisir ses informations. Offres paginées, travail d’équipe organisé avec une to-do list.",
+      },
       {
         label: "Résultat",
-        value: "TODO Ce que ça a donné, chiffré si possible.",
+        value:
+          "Site fonctionnel en local, conforme au cahier des charges. API REST avec routes protégées, authentification par JWT et sessions, gestion du CORS. Code partagé sur GitHub avec branches et pull requests.",
       },
     ],
-    tags: ["TODO", "TODO", "TODO"],
+    tags: ["React", "FastAPI", "MySQL"],
     links: [
-      { label: "Code", href: "https://github.com/TODO" },
-      { label: "Write-up", href: "https://TODO" },
+      {
+        label: "Code",
+        href: "https://github.com/antonin-chevolleau/job-board-epitech",
+      },
     ],
   },
   {
-    title: "TODO Projet 2",
-    context: "Projet perso",
-    summary: "TODO Une phrase qui dit ce que fait le projet.",
-    tags: ["TODO", "TODO"],
-    links: [{ label: "Code", href: "https://github.com/TODO" }],
+    id: "projet-portfolio",
+    title: "Portfolio front-end",
+    context: "Projet perso, fin de formation OpenClassrooms",
+    summary:
+      "Le site qui présente mon travail de développeur front-end, avec un back-end NestJS et MongoDB.",
+    tags: ["Next.js", "Tailwind CSS", "NestJS", "MongoDB"],
+    links: [
+      { label: "Code front", href: "https://github.com/Drack0r/Portfolio" },
+      {
+        label: "Code back",
+        href: "https://github.com/Drack0r/Portfolio-Backend",
+      },
+      {
+        label: "Site en ligne",
+        href: "https://portfolio-eight-pi-4a67i0fzim.vercel.app/",
+      },
+    ],
   },
   {
-    title: "TODO Projet 3",
-    context: "Box HackTheBox",
-    summary: "TODO Une phrase qui dit ce que fait le projet.",
-    tags: ["TODO", "TODO"],
-    links: [{ label: "Write-up", href: "https://TODO" }],
+    id: "projet-cjca",
+    title: "Certification CJCA (Hack The Box)",
+    context: "Apprentissage perso, en cours",
+    summary:
+      "Ma première certification en cybersécurité (Certified Junior Cybersecurity Associate), que je prépare en ce moment.",
+    tags: ["Pentest", "Web", "Réseau", "Linux", "Windows", "Bash"],
+    links: [
+      {
+        label: "Certification",
+        href: "https://academy.hackthebox.com/preview/certifications/htb-certified-junior-cybersecurity-associate",
+      },
+      { label: "Profil Hack The Box", href: htbProfile.href },
+    ],
   },
 ];
 
@@ -62,7 +98,8 @@ function Projects() {
             Projets
           </h2>
           <p className="text-muted mt-4 text-base leading-relaxed sm:text-lg">
-            Ce que j’ai construit, testé ou attaqué, avec le code à l’appui.
+            Ce que j’ai construit en développement web, avec le code à l’appui,
+            et la certification cyber que je prépare.
           </p>
         </div>
 
@@ -97,16 +134,22 @@ function Projects() {
                 ))}
               </ul>
 
-              <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+              {/* Boutons plutôt que liens texte : le code du projet phare est la preuve principale de la section */}
+              <ul className="mt-8 flex flex-wrap gap-3">
                 {featuredProject.links.map((link) => (
                   <li key={link.label}>
-                    <ExternalLink href={link.href}>
+                    <Button
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="secondary"
+                    >
                       {link.label}
                       <span className="sr-only">
                         {" "}
-                        : {featuredProject.title}
+                        : {featuredProject.title} (nouvel onglet)
                       </span>
-                    </ExternalLink>
+                    </Button>
                   </li>
                 ))}
               </ul>
@@ -130,7 +173,7 @@ function Projects() {
                     className="grid grid-cols-1 gap-1 py-4 text-sm sm:grid-cols-4 sm:gap-4"
                   >
                     <dt className="text-muted font-mono">{item.label}</dt>
-                    <dd className="text-foreground leading-relaxed sm:col-span-3">
+                    <dd className="text-foreground leading-relaxed text-pretty sm:col-span-3">
                       {item.value}
                     </dd>
                   </div>

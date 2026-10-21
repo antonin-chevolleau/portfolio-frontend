@@ -3,7 +3,10 @@ import { profileLinks } from "@/data/contact";
 
 const missionDetails = [
   { label: "Domaine", value: "Cybersécurité, orientée pentest" },
-  { label: "Formation", value: "Epitech, Pre-MSc vers MSc Cybersécurité" },
+  {
+    label: "Formation",
+    value: "Epitech, Master of Science Cybersécurité",
+  },
   // \u00a0 : espace insécable, le chiffre ne se sépare pas de son unité en fin de ligne
   {
     label: "Rythme",
@@ -15,16 +18,7 @@ const missionDetails = [
 
 function Hero() {
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="relative isolate overflow-hidden"
-    >
-      {/* Halo très discret derrière le titre */}
-      <div
-        aria-hidden="true"
-        className="bg-accent/10 absolute -top-48 -left-32 -z-10 size-96 rounded-full blur-3xl"
-      />
-
+    <section aria-labelledby="hero-title">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-16 md:py-24 lg:grid-cols-12 lg:items-center lg:gap-16 lg:py-32">
         <div className="lg:col-span-7">
           <h1
@@ -35,7 +29,11 @@ function Hero() {
           </h1>
 
           <p className="text-foreground mt-6 max-w-xl text-2xl font-normal tracking-tight text-balance sm:text-3xl">
-            Étudiant à Epitech, je me forme à la cybersécurité.
+            J&apos;ai appris à construire, je choisis maintenant de protéger.
+          </p>
+          <p className="text-muted mt-4 max-w-xl text-base leading-relaxed sm:text-lg">
+            Développeur front-end de formation, je souhaite désormais me former
+            à la cybersécurité.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -88,7 +86,7 @@ function Hero() {
                   className="group grid grid-cols-3 gap-4 rounded-sm py-2 text-sm"
                 >
                   <span className="text-muted font-mono">{link.label}</span>
-                  <span className="text-accent col-span-2 truncate font-mono underline-offset-4 group-hover:underline">
+                  <span className="text-accent col-span-2 truncate font-medium underline-offset-4 group-hover:underline">
                     {link.handle}
                     <span className="sr-only"> (nouvel onglet)</span>
                   </span>

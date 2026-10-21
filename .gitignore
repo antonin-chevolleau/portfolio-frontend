@@ -51,3 +51,6 @@ AGENTS.md
 /.github/hooks/
 /.github/skills/
 PRODUCT.md
+
+# temporary files
+.tmp
