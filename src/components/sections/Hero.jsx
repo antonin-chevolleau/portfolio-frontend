@@ -1,11 +1,13 @@
+import Image from "next/image";
+
 import Button from "@/components/ui/Button";
-import { profileLinks } from "@/data/contact";
+import { cvHref, profileLinks } from "@/data/contact";
 
 const missionDetails = [
   { label: "Domaine", value: "Cybersécurité, orientée pentest" },
   {
     label: "Formation",
-    value: "Epitech, Master of Science Cybersécurité",
+    value: "Epitech, année préparatoire puis MSc Cybersécurité",
   },
   // \u00a0 : espace insécable, le chiffre ne se sépare pas de son unité en fin de ligne
   {
@@ -21,6 +23,15 @@ function Hero() {
     <section aria-labelledby="hero-title">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-6 py-16 md:py-24 lg:grid-cols-12 lg:items-center lg:gap-16 lg:py-32">
         <div className="lg:col-span-7">
+          {/* TODO : remplacer placeholder.svg par ma photo (carrée, ~400×400) */}
+          <Image
+            src="/placeholder.svg"
+            alt="Portrait d’Antonin Chevolleau"
+            width={160}
+            height={160}
+            preload
+            className="border-border ring-accent/10 mb-10 size-28 rounded-full border object-cover ring-4 sm:size-32 lg:size-40"
+          />
           <h1
             id="hero-title"
             className="text-foreground text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl"
@@ -29,10 +40,10 @@ function Hero() {
           </h1>
 
           <p className="text-foreground mt-6 max-w-xl text-2xl font-normal tracking-tight text-balance sm:text-3xl">
-            J&apos;ai appris à construire, je choisis maintenant de protéger.
+            J’ai appris à construire, j’apprends maintenant à casser.
           </p>
           <p className="text-muted mt-4 max-w-xl text-base leading-relaxed sm:text-lg">
-            Développeur front-end de formation, je souhaite désormais me former
+            Développeur front-end de formation, je souhaite maintenant me former
             à la cybersécurité.
           </p>
 
@@ -41,6 +52,17 @@ function Hero() {
             <Button href="#projets" variant="secondary">
               Voir mes projets
             </Button>
+            {cvHref && (
+              <Button
+                href={cvHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+              >
+                Voir mon CV
+                <span className="sr-only"> (PDF, nouvel onglet)</span>
+              </Button>
+            )}
           </div>
         </div>
 

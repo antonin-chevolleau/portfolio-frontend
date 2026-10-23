@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 const title = "Antonin Chevolleau | Portfolio";
 const description =
-  "Étudiant en Pre-MSc à Epitech, je cherche une alternance en cybersécurité (pentest) à partir de janvier 2027 en Île-de-France. Projets, compétences et parcours.";
+  "Étudiant en année préparatoire au MSc Cybersécurité d’Epitech, je cherche une alternance en cybersécurité (pentest) à partir de janvier 2027 en Île-de-France. Projets, compétences et parcours.";
 
 export const metadata = {
   title,

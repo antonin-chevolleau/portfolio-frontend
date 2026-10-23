@@ -2,7 +2,7 @@ import ExternalLink from "@/components/ui/ExternalLink";
 import Tag from "@/components/ui/Tag";
 import { profileLinks } from "@/data/contact";
 
-const htbProfile = profileLinks.find((link) => link.label === "HackTheBox");
+const htbProfile = profileLinks.find((link) => link.label === "Hack The Box");
 
 // `proofs` est optionnel : liens vers là où la compétence a été mise en pratique.
 // Un `href` qui commence par "#" pointe vers la page : une section ("#projets") ou un projet précis ("#projet-xxx", voir son `id`).
@@ -33,7 +33,7 @@ const skillGroups = [
     ],
     proofs: [
       { label: "Tanière Job Board", href: "#projet-job-board" },
-      { label: "Portfolio front-end", href: "#projet-portfolio" },
+      { label: "Portfolio", href: "#projet-portfolio" },
     ],
   },
   {
@@ -49,7 +49,7 @@ const skillGroups = [
     ],
     proofs: [
       { label: "Tanière Job Board", href: "#projet-job-board" },
-      { label: "Portfolio front-end", href: "#projet-portfolio" },
+      { label: "Portfolio", href: "#projet-portfolio" },
     ],
   },
   {
@@ -74,7 +74,7 @@ function Skills() {
             Compétences
           </h2>
           <p className="text-muted mt-4 text-base leading-relaxed sm:text-lg">
-            Les outils que j’utilise, et où je les ai mis en pratique.
+            Les outils utilisés et leur mise en pratique.
           </p>
         </div>
 

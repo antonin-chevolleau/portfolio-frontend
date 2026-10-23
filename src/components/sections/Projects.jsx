@@ -5,7 +5,7 @@ import ExternalLink from "@/components/ui/ExternalLink";
 import Tag from "@/components/ui/Tag";
 import { profileLinks } from "@/data/contact";
 
-const htbProfile = profileLinks.find((link) => link.label === "HackTheBox");
+const htbProfile = profileLinks.find((link) => link.label === "Hack The Box");
 
 // Un seul projet doit avoir `featured: true` : c'est le projet phare.
 // `image` est optionnel : { src: "/projects/xxx.png", alt, width, height }
@@ -45,7 +45,7 @@ const projects = [
   },
   {
     id: "projet-portfolio",
-    title: "Portfolio front-end",
+    title: "Portfolio",
     context: "Projet perso, fin de formation OpenClassrooms",
     summary:
       "Le site qui présente mon travail de développeur front-end, avec un back-end NestJS et MongoDB.",

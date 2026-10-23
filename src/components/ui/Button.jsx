@@ -7,7 +7,7 @@ const variants = {
 };
 
 // Lien stylé en bouton : toutes les actions du site sont des liens
-// (ancres, mailto, téléchargement)
+// (ancres, liens externes, téléchargement)
 function Button({ variant = "primary", className, ...props }) {
   return (
     <a

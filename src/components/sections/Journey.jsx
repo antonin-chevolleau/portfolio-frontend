@@ -20,7 +20,7 @@ const steps = [
     period: "2025 – 2026",
     title: "Formation Intégrateur web",
     place: "OpenClassrooms",
-    description: "Titre RNCP de niveau 5 « Développeur informatique »",
+    description: "Titre RNCP de niveau 5 « Développeur informatique ».",
   },
 ];
 

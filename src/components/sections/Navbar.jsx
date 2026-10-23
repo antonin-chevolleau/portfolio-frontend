@@ -27,7 +27,7 @@ function Navbar() {
         {/* Masqué sur mobile : nom + 4 liens passaient sur deux lignes, et le h1 affiche déjà le nom */}
         <Link
           href="/"
-          className="text-foreground rounded-sm text-sm font-semibold tracking-tight max-sm:hidden"
+          className="text-foreground text-base rounded-sm font-semibold tracking-tight max-sm:hidden"
         >
           Antonin Chevolleau
         </Link>

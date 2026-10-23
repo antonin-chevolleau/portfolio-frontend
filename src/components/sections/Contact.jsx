@@ -1,9 +1,9 @@
 import Button from "@/components/ui/Button";
 import ExternalLink from "@/components/ui/ExternalLink";
-import { cvHref, email, profileLinks } from "@/data/contact";
+import { cvHref, profileLinks } from "@/data/contact";
 
-// Sans e-mail renseigné, LinkedIn devient le canal principal :
-// le bouton « Me contacter » de la hero ne mène jamais à une impasse
+// LinkedIn est le canal de contact principal : le bouton « Me contacter »
+// de la hero mène ici, il doit toujours y trouver une action
 const linkedIn = profileLinks.find((link) => link.label === "LinkedIn");
 const proofLinks = profileLinks.filter((link) => link.label !== "LinkedIn");
 
@@ -24,23 +24,18 @@ function Contact() {
           </h2>
           <p className="text-muted mt-4 text-base leading-relaxed sm:text-lg">
             Pour parler d’une alternance en pentest à partir de janvier 2027, en
-            Île-de-France, le plus simple est{" "}
-            {email ? "un e-mail" : "un message sur LinkedIn"}.
+            Île-de-France, le plus simple est de me contacter sur LinkedIn.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            {email ? (
-              <Button href={`mailto:${email}`}>M’écrire</Button>
-            ) : (
-              <Button
-                href={linkedIn.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Me contacter sur LinkedIn
-                <span className="sr-only"> (nouvel onglet)</span>
-              </Button>
-            )}
+            <Button
+              href={linkedIn.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Me contacter sur LinkedIn
+              <span className="sr-only"> (nouvel onglet)</span>
+            </Button>
             {cvHref && (
               <Button href={cvHref} download variant="secondary">
                 Télécharger mon CV
@@ -59,18 +54,6 @@ function Contact() {
               ))}
             </ul>
           </div>
-
-          {/* Adresse visible pour pouvoir la copier sans ouvrir de client mail */}
-          {email && (
-            <p className="text-muted mt-6 font-mono text-sm">
-              <a
-                href={`mailto:${email}`}
-                className="text-accent rounded-sm underline-offset-4 hover:underline"
-              >
-                {email}
-              </a>
-            </p>
-          )}
         </div>
       </div>
     </section>
