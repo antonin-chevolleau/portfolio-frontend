@@ -4,9 +4,9 @@ import { profileLinks } from "@/data/contact";
 
 const htbProfile = profileLinks.find((link) => link.label === "Hack The Box");
 
-// `proofs` est optionnel : liens vers là où la compétence a été mise en pratique.
-// Un `href` qui commence par "#" pointe vers la page : une section ("#projets") ou un projet précis ("#projet-xxx", voir son `id`).
-// `note` remplace la liste d'outils quand le domaine est encore en cours d'apprentissage.
+// `proofs` (optionnel) : où la compétence a été mise en pratique. Un `href` en "#"
+// pointe vers une section ("#projets") ou un projet ("#projet-xxx", voir son `id`)
+// `note` (optionnel) : remplace la liste d'outils pour un domaine en cours d'apprentissage
 const skillGroups = [
   {
     domain: "Cybersécurité",

@@ -7,9 +7,9 @@ import { profileLinks } from "@/data/contact";
 
 const htbProfile = profileLinks.find((link) => link.label === "Hack The Box");
 
-// Un seul projet doit avoir `featured: true` : c'est le projet phare.
-// `image` est optionnel : { src: "/projects/xxx.png", alt, width, height }
-// `id` est optionnel : ancre du projet, pour y pointer depuis Compétences (ex. id: "projet-xxx" -> href "#projet-xxx")
+// `featured` : projet phare, un seul projet doit l'avoir
+// `image` (optionnel) : { src: "/projects/xxx.png", alt, width, height }
+// `id` (optionnel) : ancre du projet, pour y pointer depuis Compétences ("#projet-xxx")
 const projects = [
   {
     featured: true,

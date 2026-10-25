@@ -14,9 +14,9 @@ function NavLinks({ links }) {
 
     let frame = null;
 
-    // La section active est la dernière dont le haut a passé le milieu de
-    // l'écran ; aucune tant qu'on est sur la hero. Recalculée à chaque
-    // scroll, donc juste même après un saut direct (Home, "Retour en haut").
+    // Section active : la dernière dont le haut a passé le milieu de l'écran,
+    // aucune sur la hero. Recalculée à chaque scroll, donc juste même après
+    // un saut direct (logo, « Retour en haut »)
     const updateActive = () => {
       frame = null;
       const middle = window.innerHeight / 2;
@@ -60,7 +60,7 @@ function NavLinks({ links }) {
               href={link.href}
               aria-current={isActive ? "location" : undefined}
               className={cn(
-                // py-2 / -my-2 : zone tactile de 36 px sans changer la hauteur de la nav
+                // py-2 / -my-2 : zone tactile plus haute sans changer la mise en page
                 "hover:text-foreground hover:decoration-accent -my-2 inline-block rounded-sm py-2 underline-offset-8 transition-colors duration-200 ease-out hover:underline",
                 isActive && "text-foreground decoration-accent underline",
               )}

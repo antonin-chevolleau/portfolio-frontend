@@ -1,4 +1,3 @@
-// Fichier servi depuis public/
 export const cvHref = "/cv-antonin-chevolleau.pdf";
 
 export const profileLinks = [

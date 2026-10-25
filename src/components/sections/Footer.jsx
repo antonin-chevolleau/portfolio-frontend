@@ -7,7 +7,7 @@ function Footer() {
         <p>© {year} Antonin Chevolleau</p>
         <a
           href="#haut"
-          // py-2 / -my-2 : zone tactile plus haute sans changer la hauteur du footer
+          // py-2 / -my-2 : zone tactile plus haute sans changer la mise en page
           className="hover:text-foreground -my-2 inline-block rounded-sm py-2 transition-colors duration-200 ease-out"
         >
           Retour en haut

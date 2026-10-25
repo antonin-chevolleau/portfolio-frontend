@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import NavLinks from "@/components/ui/NavLinks";
 
-// Ancres vers les sections de la page d'accueil
 const navLinks = [
   { href: "#projets", label: "Projets" },
   { href: "#competences", label: "Compétences" },
@@ -24,7 +23,7 @@ function Navbar() {
         aria-label="Navigation principale"
         className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-2 px-6 py-4"
       >
-        {/* Masqué sur mobile : nom + 4 liens passaient sur deux lignes, et le h1 affiche déjà le nom */}
+        {/* Masqué sur mobile : sinon la nav passe sur deux lignes, et le h1 affiche déjà le nom */}
         <Link
           href="/"
           className="text-foreground text-base rounded-sm font-semibold tracking-tight max-sm:hidden"

@@ -43,7 +43,7 @@ function Contact() {
             )}
           </div>
 
-          {/* Dernier rappel des preuves avant de partir : les profils hors canal de contact principal */}
+          {/* Profils hors LinkedIn : dernier rappel des preuves avant de partir */}
           <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm">
             <p className="text-muted">Mes preuves en ligne</p>
             <ul className="flex flex-wrap gap-x-6 gap-y-2">

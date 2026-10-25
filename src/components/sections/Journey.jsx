@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 
-// Du plus récent au plus ancien. `status` : "next" (à venir), "current" (en cours) ou "done".
-// `description` est optionnelle.
+// Du plus récent au plus ancien
+// `status` : "next" (à venir), "current" (en cours) ou "done" (terminé)
+// `description` (optionnel) : précision affichée sous le lieu
 const steps = [
   {
     status: "next",
